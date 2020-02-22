@@ -12,3 +12,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag mpepping/autosub:latest
+
+    - name: Docker Registry
+      uses: actions/docker/login@c08a5fc9e0286844156fefff2c141072048141f6
+      env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+
+    - name: Push
+      uses: actions/docker/cli@c08a5fc9e0286844156fefff2c141072048141f6
+      with:
+        args: push mpepping/autosub
+

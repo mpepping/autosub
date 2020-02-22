@@ -1,6 +1,6 @@
 # autosub
 
-[Autosub](https://github.com/BenjV/autosub-bootstrapbill) in a container.
+[Autosub](https://github.com/BenjV/autosub) in a container.
 
 Autosub is seeks and downloads subtitles for media-files in configured directories. Comes with a GUI.
 
